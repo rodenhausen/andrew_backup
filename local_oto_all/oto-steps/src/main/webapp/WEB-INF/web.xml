@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+	<display-name>otosteps</display-name>
+
+	<!-- Servlets -->
+	<!-- http://www.gwtproject.org/doc/latest/DevGuideServerCommunication.html#DevGuideImplementingServices
+	       -> Common pitfalls: for url-pattern help -->
+
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	
+	<servlet>
+		<servlet-name>GeneralServiceImpl</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.oto.steps.server.rpc.GeneralServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GeneralServiceImpl</servlet-name>
+		<url-pattern>/otosteps/general</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>TermInfoServiceImpl</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.oto.steps.server.rpc.TermInfoServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TermInfoServiceImpl</servlet-name>
+		<url-pattern>/otosteps/termInfo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ToOntologiesServiceImpl</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.oto.steps.server.rpc.ToOntologiesServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ToOntologiesServiceImpl</servlet-name>
+		<url-pattern>/otosteps/toOntologies</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>OntologyFileServiceImpl</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.oto.steps.server.rpc.OntologyFileServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OntologyFileServiceImpl</servlet-name>
+		<url-pattern>/otosteps/ontologyFile</url-pattern>
+	</servlet-mapping>
+
+</web-app>
